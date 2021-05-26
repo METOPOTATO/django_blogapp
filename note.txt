@@ -17,4 +17,4 @@ python manage.py sqlmigrate
 
 python manage.py startapp app_name
 
-python
+*Cascade sql
