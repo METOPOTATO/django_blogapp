@@ -18,3 +18,9 @@ python manage.py sqlmigrate
 python manage.py startapp app_name
 
 *Cascade sql
+
+psql -h hostname -d databasename -U username -f file.sql
+
+
+#template notes
+{{ value|truncatechars:9 }}
