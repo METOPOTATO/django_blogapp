@@ -1,0 +1,99 @@
+*{
+  box-sizing: border-box;
+}
+
+header{
+  background-color:rgba(167, 220, 255, 0.466);
+}
+
+nav{
+  width: 70%;
+  margin: 0 15% 0 15%;
+}
+nav::after{
+  content: '';
+  clear: both;
+  display: block;
+}
+nav .nav-left {
+  float:left;
+}
+nav .nav-right {
+  margin: 0 80px 0 0;
+  float:right;
+}
+nav div ul li{
+  
+  display:inline-block;
+  background-color: azure;
+  margin: 5px 0 5px 0;
+  width: 100px;
+  padding:10px;
+  text-align: center;
+  border-radius: 20px;
+}
+nav div ul li a{
+  text-decoration:none;
+}
+
+div.content div{
+  display: inline-block;
+}
+
+div.content .center{
+  background-color: rgb(254, 254, 255);
+  margin: 0 15% 0 15%;
+  width: 70%;
+}
+
+.content .center .card{
+  float: left;
+  width: 40%;
+  margin: 2%;
+  padding: 2%;
+  border: 1px solid #eeee;
+}
+
+.content .center .card::after{
+  clear: both;
+}
+
+.content .center .card .card-header{
+  display: block;
+}
+.content .center .card .card-header::after{
+  clear: both;
+  content:'';
+  display: block;
+}
+.content .center .card .card-header .card-header-left{
+  float:left;
+  max-width: 100px;
+}
+.content .center .card .card-header .card-header-left a{
+  margin: 10px 0 5px 5px;
+  display: inline-block;
+}
+.content .center .card .card-header .card-header-right{
+  float: right;
+  max-width: 100px;
+}
+.content .center .card .card-header .card-header-right p{
+  margin: 10px 0 5px 5px;
+  display: inline-block;
+}
+
+.content .center .card .card-top{
+  text-align: center;
+  display: block;
+  overflow: hidden;
+}
+.content .center .card .card-top h4{
+  text-transform: uppercase;
+  
+}
+.content .center .card .card-main{
+  text-align: justify;
+  overflow: hidden;
+  max-height: 198px;
+}

@@ -4,6 +4,9 @@ migration
 
 model: 
 
+django-admin startproject _project
+
+python manage.py startapp app_name
 
 python manage.py createsuperuser
 
@@ -15,7 +18,7 @@ python manage.py makemigrations
 
 python manage.py sqlmigrate
 
-python manage.py startapp app_name
+
 
 *Cascade sql
 

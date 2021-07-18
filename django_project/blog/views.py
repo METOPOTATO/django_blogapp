@@ -7,7 +7,8 @@ from .models import Post
 
 def home(request):
     context = {
-        'posts': Post.objects.all()
+        'posts': Post.objects.all(),
+        'range':range(3)
     }
     return render(request,'blog/home.html',context)
 
