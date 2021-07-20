@@ -15,51 +15,40 @@
 
 <body>
 <header>
+    
     <nav>
         <div class="nav-left">
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Contact us</a></li>
+                <li><a href="{% url 'blog-home' %}">Home</a></li>
+                <li><a href="{% url 'blog-about' %}">About</a></li>
+                <li><a href="#">Contact us</a></li>
             </ul>
         </div>
         <div class='nav-right'>
             <ul>
-                <li><a href="">Register</a></li>
-                <li><a href="">Login</a></li>
-                <li><a href="">Logout</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    <li><a href="{% url 'profile' %}">Profile</a></li>
+                {% else %}
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
             </ul>
         </div>
     </nav>
 </header>
 
 <div class="content">
-
     <div class="center">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert-{{message.tags}}">{{message}}</div>
+            {% endfor %}
+        {% endif %}
+        {% block content %}
 
-        {% for post in posts %}
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-header-left">
-                        <a href="#">{{post.author}}</a>
-                    </div>
-                    <div class="card-header-right">
-                        <p>{{post.date_posted|date:"Y/m/d"}}</p>
-                    </div>
-                </div>
-                <div class="card-top">
-                    <h4>{{post.header}}</h4>
-                </div>
-                <div class="card-main">
-                    {{post.content}}
-                </div>
-
-            </div>
-        {% endfor %}
-        
-
+        {% endblock %}
     </div>
 </div>
-    
 </body>
 </html>

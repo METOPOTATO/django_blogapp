@@ -1,6 +1,22 @@
 {% extends 'blog/base.html'%}
 {% block content %}
     {% for post in posts %}
-
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-left">
+                    <a href="#">{{post.author}}</a>
+                </div>
+                <div class="card-header-right">
+                    <p>{{post.date_posted|date:"Y/m/d"}}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="card-top">
+                <h4>{{post.title}}</h4>
+            </div>
+            <div class="card-main">
+                {{post.description}}
+            </div>
+        </div>
     {% endfor %}
 {% endblock %}

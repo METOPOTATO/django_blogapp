@@ -36,30 +36,25 @@ nav div ul li a{
   text-decoration:none;
 }
 
-div.content div{
-  display: inline-block;
-}
-
-div.content .center{
+.content .center{
   background-color: rgb(254, 254, 255);
   margin: 0 15% 0 15%;
   width: 70%;
 }
-
 .content .center .card{
   float: left;
   width: 40%;
   margin: 2%;
   padding: 2%;
   border: 1px solid #eeee;
+  border-radius:  20px;
 }
-
 .content .center .card::after{
   clear: both;
 }
-
 .content .center .card .card-header{
   display: block;
+  margin: 0 0 2px 0;
 }
 .content .center .card .card-header::after{
   clear: both;
@@ -71,18 +66,18 @@ div.content .center{
   max-width: 100px;
 }
 .content .center .card .card-header .card-header-left a{
-  margin: 10px 0 5px 5px;
+  margin: 2px 0 2px 5px;
   display: inline-block;
+  text-decoration:none
 }
 .content .center .card .card-header .card-header-right{
   float: right;
   max-width: 100px;
 }
 .content .center .card .card-header .card-header-right p{
-  margin: 10px 0 5px 5px;
+  margin: 2px 0 2px 5px;
   display: inline-block;
 }
-
 .content .center .card .card-top{
   text-align: center;
   display: block;
@@ -90,10 +85,46 @@ div.content .center{
 }
 .content .center .card .card-top h4{
   text-transform: uppercase;
-  
+  margin: 2px 0 2px 0;
 }
 .content .center .card .card-main{
   text-align: justify;
   overflow: hidden;
+  height: 198px;
   max-height: 198px;
+}
+
+.form-register {
+  margin: 30px;
+}
+.form-register .form-field label{
+  width: 200px;
+  border: black solid 1px;
+  margin:5px;
+  padding: 5px;
+  display: inline-block;
+  height: 30px;
+}
+
+.form-register .form-field input{
+  width:500px;
+  border: black solid 1px;
+  margin:5px;
+  padding: 5px;
+  display: inline-block;
+  height: 30px;
+}
+
+.form-register .btn-submit{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100px;
+}
+
+.form-register .btn-submit button{
+  background-color: rgb(228, 243, 255);
+  margin: 5px;
+  padding: 5px 10px 5px 10px;
+
 }

@@ -1,22 +1,50 @@
 {% extends "blog/base.html" %} 
 {% load crispy_forms_tags %}
-
 {% block content %}
-<div class="content-section">
+
+
+<div class="form-register">
+
     <form action="" method='POST'>
         {% csrf_token %}
-        <fieldset class='form-group'>
-            <legend class="border-bottom mb-4">Join Today</legend>
-            {{ form | crispy}}
+        <fieldset>
+            <legend>Join Today</legend>
+            <div class="form-field">
+                <label for="username">{{ form.username.label}}</label>
+                {{ form.username}}
+                {% if form.username.errors %}
+                    {{form.username.errors}}
+                {% endif %}
+            </div>
+            <div class="form-field">
+                <label for="username">{{ form.password1.label}}</label>
+                {{ form.password1}}
+                {% if form.password1.errors %}
+                    {{form.password1.errors}}
+                {% endif %}
+            </div>
+            <div class="form-field">
+                <label for="username">{{ form.password2.label}}</label>
+                {{ form.password2}}
+                {% if form.password2.errors %}
+                    {{form.password2.errors}}
+                {% endif %}
+            </div>
+            <div class="form-field">
+                <label for="username">{{ form.email.label}}</label>
+                {{ form.email}}
+                {% if form.email.errors %}
+                    {{form.email.errors}}
+                {% endif %}
+            </div>
+            
         </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Sign Up</button>
+        <div class='btn-submit'>
+            <button type="submit">Submit</button>
         </div>
     </form>
-    <div class='border-top pt-3'>
-        <small class="text-muted">
-            Already Have An Account? <a small="ml-2" href="{% url 'login' %}"> SignIn</a>
-        </small>
-    </div>
+    <hr>
+    <span>Already have an account? <a href="{% url 'login' %}">Sign In</a></span>
+
 </div>
 {% endblock %}
